@@ -3,9 +3,6 @@
     padding: 0rem;
     outline: none;
 }
-body{
-    box-sizing: border-box;
-}
 *::selection{
     background-color: rgba(0, 0, 0);
     color: #f3f3f3;

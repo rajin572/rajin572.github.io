@@ -1,0 +1,344 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+*::selection {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #006eff;
+    border-radius: 14rem;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+body {
+    background: linear-gradient(#16222a, #3a6073);
+}
+
+section {
+    width: 100%;
+    padding: 50px 0px;
+    background: black;
+    color: white;
+    border: 5px solid white;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+section h1 {
+    font-weight: 900;
+    font-size: 50px;
+    margin: 0px 0px 50px;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    color: rgb(0, 255, 242);
+}
+
+section h1::after {
+    content: "";
+    width: 500px;
+    height: 5px;
+    display: block;
+    background: #f44336;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.theoryx {
+    font-weight: 700;
+    width: 95%;
+    margin: 0px auto 10px;
+}
+
+.examplex p {
+    color: chartreuse;
+    font-weight: 600;
+}
+
+.examplex {
+    width: 95%;
+    margin: 0px auto 10px;
+}
+
+.examplex li {
+    margin: 5px;
+}
+
+.examplex ol {
+    color: rgb(209, 238, 130);
+    margin: 10px 20px;
+}
+
+.name {
+    width: 95%;
+    margin: 0px auto 10px;
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(209, 238, 130);
+}
+
+.name span {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.theory {
+    width: 87%;
+    margin: auto;
+}
+
+.starcture {
+    width: 87%;
+    margin: 20px auto;
+}
+
+.starcture p {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: underline;
+    color: rgb(255, 230, 0);
+}
+
+.starcture div {
+    margin: 10px 10px;
+}
+
+.example {
+    width: 87%;
+    margin: 10px auto;
+}
+
+.example ol {
+    margin: 10px 20px;
+}
+
+.example li {
+    margin: 5px;
+}
+
+.example p {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: underline;
+    color: rgb(255, 0, 119);
+}
+
+hr {
+    height: 3px;
+    width: 98%;
+    border: solid #b8b8b8;
+    margin: 20px auto;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin: 0px auto;
+}
+
+footer a {
+    display: inline-block;
+    margin: 50px 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+footer button {
+    display: inline-block;
+    margin: 50px 10px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.but1 {
+    background-color: #555555;
+    border: 2px solid #525252;
+    padding: 5px 20px;
+    color: rgb(0, 0, 0);
+    border: 2px solid #525252;
+}
+
+.but2 {
+    background-color: #f44336;
+    border: 2px solid #f44336;
+    box-shadow: 3px 1px 5px black;
+    padding: 5px 10px;
+    border: 2px solid #f44336;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    section {
+        font-size: 16px;
+    }
+
+    section h1 {
+        font-size: 40px;
+    }
+
+    section h1::after {
+        width: 400px;
+    }
+
+    .name {
+        font-size: 23px;
+    }
+
+    .name span {
+        font-size: 28px;
+    }
+
+    .starcture p {
+        font-size: 19px;
+    }
+
+    .example p {
+        font-size: 19px;
+    }
+
+    footer a {
+        margin: 45px 10px;
+        font-size: 20px;
+    }
+
+    footer button {
+        margin: 45px 10px;
+        font-size: 20px;
+    }
+
+    .but1 {
+        padding: 4px 18px;
+
+    }
+
+    .but2 {
+        padding: 4px 9px;
+    }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+    section {
+        font-size: 15px;
+    }
+
+    section h1 {
+        font-size: 30px;
+    }
+
+    section h1::after {
+        width: 300px;
+    }
+
+    .name {
+        font-size: 21px;
+    }
+
+    .name span {
+        font-size: 25px;
+    }
+
+    .starcture p {
+        font-size: 17px;
+    }
+
+    .example p {
+        font-size: 17px;
+    }
+
+    footer a {
+        margin: 40px 10px;
+        font-size: 18px;
+    }
+
+    footer button {
+        margin: 40px 10px;
+        font-size: 18px;
+    }
+
+    .but1 {
+        padding: 4px 16px;
+
+    }
+
+    .but2 {
+        padding: 4px 8px;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 425px) {
+    section {
+        font-size: 14px;
+    }
+
+    section h1 {
+        font-size: 25px;
+    }
+
+    section h1::after {
+        width: 250px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .name span {
+        font-size: 23px;
+    }
+
+    .starcture p {
+        font-size: 15px;
+    }
+
+    .example p {
+        font-size: 15px;
+    }
+
+    footer a {
+        margin: 35px 10px;
+        font-size: 15px;
+    }
+
+    footer button {
+        margin: 35px 10px;
+        font-size: 15px;
+    }
+
+    .but1 {
+        padding: 4px 15px;
+
+    }
+
+    .but2 {
+        padding: 4px 8px;
+    }
+}
+.quiz{
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #006eff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 5px 2px rgb(0, 0, 0);
+}
+.quiz a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+}

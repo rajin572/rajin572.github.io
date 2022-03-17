@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/PngItem_1364073.png" type="image/x-icon">
+</head>
+<body>
+        <div class="container">
+            <div class="con">
+                <h1>Age  Calculator</h1>
+                <div class="getdata">
+                    <div class="block">
+                        <p>Day</p>
+                        <form action="">
+                            <input id="date-day" type="text" placeholder="DD" minlength="1" maxlength="2" required>
+                        </form>
+                        
+                    </div>
+                    <div class="block">
+                        <p>Month</p>
+                        <form action="">
+                            <input id="date-month" type="text" placeholder="MM" minlength="1" maxlength="2" required>
+                        </form>
+                    </div>
+                    <div class="block">
+                        <p>Year</p>
+                        <form action="">
+                            <input id="date-year" type="text" placeholder="YYYY" minlength="1" maxlength="4" required>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="cal">
+                    <input onclick="ageCalculate()" id="start" type="submit" value="calculate" required>
+                </div>
+                <h2>Your Age Is :</h2>
+                <div class="output">
+                    <div class="outblock">
+                        <span id="years">-</span>
+                        <p>Year</p>
+                    </div>
+                    <div class="outblock">
+                        <span id="months">-</span>
+                        <p>Month</p>
+                    </div>
+                    <div class="outblock">
+                        <span id="days">-</span>
+                        <p>Date</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    
+    
+    
+    <!-- javascript link -->
+    <script src="js/script.js"></script>
+</body>
+</html>

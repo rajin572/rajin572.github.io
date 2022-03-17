@@ -1,0 +1,348 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1 {
+    box-sizing: border-box;
+    background-image:  linear-gradient(0deg , rgb(0, 183, 255), rgb(0, 255, 221));
+    background-clip: text;
+    -webkit-background-clip: text ;
+    text-transform: capitalize;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+    color: transparent;
+    font-weight: bold;
+    font-size: 55px;
+    margin: 20px 0px 30px;
+}
+.container{
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(90deg , rgba(0, 0, 0, 0.5), rgba(0, 0, 0,0.3)),url(../img/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-image:  linear-gradient(90deg , rgb(0, 183, 255), rgb(0, 255, 221)); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    /* box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    border-radius: 15px; */
+}
+.con{
+    background-image: linear-gradient(90deg , rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    /* background-image: linear-gradient(90deg , rgba(0, 0, 0, 0.5), rgba(0, 0, 0,0.3)),url(../img/back.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90%;
+    box-shadow: 0px 0px 10px rgb(0, 183, 255);
+    border-radius: 15px;
+    padding: 20px 0px;
+}
+.getdata{
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.block{
+    margin: auto;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    background-color: rgb(0, 126, 158);
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5); */
+    box-shadow: 0px 0px 05px rgb(0, 183, 255);
+}
+.getdata p{
+    background-image:  linear-gradient(0deg , rgb(255, 0, 128), rgb(162, 0, 255));
+    background-clip: text;
+    -webkit-background-clip: text ;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 10px;
+    font-size: 24px;
+}
+.getdata input{
+    text-align: center;
+    width: 150px ;
+    height: 50px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    outline: none;
+    border: 2px solid rgb(0, 0, 0);
+    font-size: 20px;
+}
+.getdata input:focus{
+    color: black;
+    border: 2px solid rgb(0, 183, 255);
+}
+.cal input{
+    background-image:  linear-gradient(90deg , rgb(0, 183, 255), rgb(0, 255, 221),rgb(0, 183, 255));
+    margin: 100px 0px 50px;
+    padding:  15px 40px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid rgb(0, 255, 221);
+    font-size: 20px;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
+    cursor: pointer;
+}
+.cal input:hover{
+    background-image:  linear-gradient(30deg ,rgb(0, 255, 221),rgb(0, 183, 255) );
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
+}
+h2 {
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 0px 0px 30px;
+}
+.output{
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-gap: 15px; */
+}
+.outblock{
+    margin: auto;
+    padding: 20px;
+    width: 150px;
+    height: 120px;
+    background-color:  rgb(0, 126, 158);
+    border-radius: 10px;
+    box-shadow: 0px 0px 05px rgb(0, 183, 255);
+}
+.output p{
+    background-image:  linear-gradient(0deg , rgb(255, 0, 128), rgb(162, 0, 255));
+    background-clip: text;
+    -webkit-background-clip: text ;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 10px;
+    font-size: 24px;
+}
+.output span{
+    background-image:  linear-gradient(0deg , rgb(255, 0, 128), rgb(162, 0, 255));
+    background-clip: text;
+    -webkit-background-clip: text ;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 10px;
+    font-size: 24px;
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 576px) and (max-width: 769px){
+    .container{
+        padding:20px 0px;
+    }
+    h1 {
+        font-size: 45px;
+        margin: 20px 0px 30px;
+    }
+    h2 {
+        font-size: 30px;
+        margin: 0px 0px 30px;
+    }
+    .con{
+        padding: 15px 0px;
+    }
+    .block{
+        padding: 15px;
+        width: 140px;
+        height: 100px;
+    }
+    .getdata p{
+        padding: 8px;
+        font-size: 18px;
+    }
+    .getdata input{
+        width: 110px ;
+        height: 35px;
+        font-size: 15px;
+    }
+    .cal input{
+        margin: 80px 0px 45px;
+        padding:  13px 37px;
+        font-size: 18px;
+    
+    }
+    .outblock{
+        padding: 15px;
+        width: 120px;
+        height: 80px;
+    }
+    .output  p{
+        padding: 8px;
+        font-size: 18px;
+    }
+    .output  span{
+        padding: 8px;
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width: 426px) and (max-width: 576px){
+    .container{
+        padding:20px 0px;
+    }
+    h1 {
+        font-size: 35px;
+        margin: 15px 0px 22px;
+    }
+    h2 {
+        font-size: 25px;
+        margin: 0px 0px 26px;
+    }
+    .con{
+        padding: 13px 0px;
+    }
+    .block{
+        padding: 13px;
+        width: 120px;
+        height: 90px;
+    }
+    .getdata p{
+        padding: 7px;
+        font-size: 17px;
+    }
+    .getdata input{
+        width: 90px ;
+        height: 30px;
+        font-size: 13px;
+    }
+    .cal input{
+        margin: 70px 0px 30px;
+        padding:  13px 37px;
+        font-size: 18px;
+    
+    }
+    .outblock{
+        padding: 13px;
+        width: 100px;
+        height: 70px;
+    }
+    .output  p{
+        padding: 7px;
+        font-size: 18px;
+    }
+    .output  span{
+        padding: 7px;
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width: 375px) and (max-width: 426px){
+    .container{
+        padding:20px 0px;
+    }
+    h1 {
+        font-size: 35px;
+        margin: 15px 0px 22px;
+    }
+    h2 {
+        font-size: 25px;
+        margin: 0px 0px 25px;
+    }
+    .con{
+        padding: 13px 0px;
+    }
+    .block{
+        padding: 13px;
+        width: 100px;
+        height: 80px;
+    }
+    .getdata p{
+        padding: 5px;
+        font-size: 15px;
+    }
+    .getdata input{
+        width: 75px ;
+        height: 25px;
+        font-size: 12px;
+    }
+    .cal input{
+        margin: 60px 0px 25px;
+        padding:  10px 35px;
+        font-size: 15px;
+    
+    }
+    .outblock{
+        padding: 13px;
+        width: 100px;
+        height: 70px;
+    }
+    .output  p{
+        padding: 7px;
+        font-size: 18px;
+    }
+    .output  span{
+        padding: 7px;
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width: 120px) and (max-width: 375px){
+    .container{
+        padding: 0px;
+    }
+    h1 {
+        font-size: 25px;
+        margin: 13px 0px 20px;
+    }
+    h2 {
+        font-size: 25px;
+        margin: 0px 0px 22px;
+    }
+    .con{
+        padding: 10px 0px;
+    }
+    .block{
+        padding: 10px;
+        width: 80px;
+        height: 60px;
+    }
+    .getdata p{
+        padding: 3px;
+        font-size: 15px;
+    }
+    .getdata input{
+        width: 60px ;
+        height: 20px;
+        font-size: 12px;
+    }
+    .cal input{
+        margin: 50px 0px 20px;
+        padding:  10px 35px;
+        font-size: 15px;
+    
+    }
+    .outblock{
+        padding: 10px;
+        width: 80px;
+        height: 50px;
+    }
+    .output  p{
+        padding: 3px;
+        font-size: 12px;
+    }
+    .output  span{
+        padding: 3px;
+        font-size: 12px;
+    }
+}

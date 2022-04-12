@@ -1,0 +1,36 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body, .main{
+    background: linear-gradient(30deg,#ee0979,#ff6a00);
+    background: -webkit-linear-gradient( 30deg, #ee0979, #ff6a00);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    text-decoration: none;
+    display: block;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
+    margin:50px 0px;
+    border-radius: 14px;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 1px 1px 10px black;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 1s;
+}
+.box:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}

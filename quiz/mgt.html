@@ -1,0 +1,545 @@
+<!-- Created By CodingNepal - www.codingnepalweb.com  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam For Admission MGt.</title>
+    <link rel="shortcut icon" href="img/books.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Lobster&family=Roboto+Condensed&display=swap"
+        rel="stylesheet">
+    <!-- FontAweome CDN Link for Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+    <!-- start Quiz button -->
+    <div class="start_btn"><button>Start <br> management <br> Quiz - 1</button></div>
+    <div class="home_btn">
+        <a href="index.html"><i class="fas fa-home"> End Quiz</i></a>
+    </div>
+
+    <!-- Info Box -->
+    <div class="info_box">
+        <div class="info-title"><span>Some Rules of this Quiz</span></div>
+        <div class="info-list">
+            <div class="info">1. You will have only <span>60 seconds</span> per each question.</div>
+            <div class="info">2. Once you select your answer, it can't be undone.</div>
+            <div class="info">3. You can't select any option once time goes off.</div>
+            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+            <div class="info">5. You'll get points on the basis of your correct answers.</div>
+        </div>
+        <div class="buttons">
+            <button class="quit">Exit Quiz</button>
+            <button class="restart">Continue</button>
+        </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+        <header>
+            <div class="title">Exam Application</div>
+            <div class="timer">
+                <div class="time_left_txt">Time Left</div>
+                <div class="timer_sec">60</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+                <!-- Here I've inserted question from JavaScript -->
+            </div>
+            <div class="option_list">
+                <!-- Here I've inserted options from JavaScript -->
+            </div>
+        </section>
+
+        <!-- footer of Quiz Box -->
+        <footer>
+            <div class="total_que">
+                <!-- Here I've inserted Question Count Number from JavaScript -->
+            </div>
+            <button class="next_btn">Next Que</button>
+        </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You've completed the Quiz!</div>
+        <div class="score_text">
+            <!-- Here I've inserted Score Result from JavaScript -->
+        </div>
+        <div class="buttons">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Quit Quiz</button>
+        </div>
+    </div>
+
+    <!-- Inside this JavaScript file I've inserted Questions and Options only -->
+    <!-- <script src="js/questions.js"></script> -->
+    <script>
+        // creating an array and passing the number, questions, options, and answers
+let questions = [
+  {
+    numb: 1, /*1st chapter */
+    question:
+      "জ্ঞানগত উপযোগ সৃষ্টি হয় কিসের মাধ্যমে ?",
+    answer: "বিজ্ঞাপন",
+    options: ["গুদামজাতকরন", "পরিবহন", "ব্যাংকিং", "বিজ্ঞাপন"],
+  },
+  {
+    numb: 2, /*2nd chapter */
+    question: `"একক ব্যক্তির মালিকানায় ও তার লাভের উদ্দেশ্যে পরিচালিত ব্যবসায়ী একমালিকানা ব্যবসায়" উক্তিটি কার?"`,
+    answer: "গ্লাস ও বেকার",
+    options: ["এফ. ডব্লিউ. টেলর", "গ্লাস ও বেকার", "আর. এম. হজেট", "এম. সি. শুকলা"],
+  },
+  {
+    numb: 3,  /*3rd chapter */
+    question: "হিন্দু পারিবারিক যৌথ ব্যবসায় কেন অংশীদারি ব্যবসায় হিসেবে গণ্য হয় না?",
+    answer: "পদমর্যাদার দ্বারা সৃষ্ট ",
+    options: [
+      "পদমর্যাদার দ্বারা সৃষ্ট ", "যোগ্যতার অভাব", "ধর্মীয় অনুভূতিতে সৃষ্ট", "ধর্মীয় অনুভূতিতে সৃষ্ট",
+    ],
+  },
+  {
+    numb: 4,/*1st chapter */
+    question:
+      "আইন-শৃঙ্খলা পরিস্থিতি কোন পরিবেশের অন্তর্ভুক্ত?",
+    answer: "রাজনৈতিক",
+    options: [
+      "সামাজিক", "আইনগত", "রাজনৈতিক", "অর্থনীতি",
+    ],
+  },
+  {
+    numb: 5,  /*2nd chapter */
+    question: "কোনটি একমালিকানা সংগঠনের বৈশিষ্ট্য নয় ?",
+    answer: "নিশ্চিত স্থায়িত্ব",
+    options: ["নিশ্চিত স্থায়িত্ব", "একমালিকানা", "সহজ গঠন", "অপর্যাপ্ত প্রযুক্তি"],
+  },
+  {
+    numb: 6,  /*3rd chapter */
+    question:
+      "চুক্তির বিলুপ্তির ফলে অংশীদারি ব্যবসায়ের কোন ধরনের বিলোপ সাধন হয়?",
+    answer: "আদালতের মাধ্যমে",
+    options: [
+      "বাধ্যতামূলক",
+      "বিশেষ ঘটনার প্রেক্ষিতে",
+      "বিজ্ঞপ্তি দ্বারা",
+      "আদালতের মাধ্যমে",
+    ],
+  },
+  {
+    numb: 7,/*1st chapter */
+    question: "মাছ ধরা কোন ধরনের শিল্প ?",
+    answer: "উত্তোলন শিল্প",
+    options: ["উত্তোলন শিল্প", "প্রজনন শিল্প", "উৎপাদন শিল্প", "সংযোগ শিল্প"],
+  },
+  {
+    numb: 8,  /*2nd chapter */
+    question:
+      "নিচের কোন বিষয়টি একমালিকানা ব্যবসায়ের মালিক , শ্রমিক এবং ক্রেতার মধ্যে ঘনিষ্ঠ সম্পর্ক সৃষ্টি করে?",
+    answer: "মালিকের সরাসরি তত্ত্বাবধান",
+    options: ["মালিকের নিজস্ব মূলধন", "মালিকের ব্যক্তিগত প্রচেষ্টা", "মালিকের সরাসরি তত্ত্বাবধান", "পরিবর্তনশীলতা"],
+  },
+  {
+    numb: 9,  /*3rd chapter */
+    question:
+      "অংশীদারি ব্যবসায়ের মূল ভিত্তি কী?",
+    answer: "চুক্তি",
+    options: ["পুঁজি", "পদ মর্যাদা", "চুক্তি", "কোনোটিই নয়"],
+  },
+  {
+    numb: 10,/*1st chapter */
+    question:
+      "উৎপাদক নিয়ন্ত্রিত বাজার রাতারাতি বক্তা নিয়ন্ত্রিত বাজারে রূপান্তরিত হয় -",
+    answer: "আধুনিক যুগে",
+    options: ["আধুনিক যুগে", "প্রাচীন যুগে", "মধ্যযুগের", "অতি প্রাচীন যুগে"],
+  }, {
+    numb: 11,  /*2nd chapter */
+    question:
+      "নিম্নের কোন ব্যবসায়টি একমালিকানা ব্যবসায়ের জন্য বিশেষভাবে উপযোগী?",
+    answer: "",
+    options: ["সিমেন্ট ফেক্টরি", "কারখানা", "আর্থিক প্রতিষ্ঠান", "মুদি দোকান"],
+  },
+  {
+    numb: 12,  /*3rd chapter */
+    question: "নিম্নের কোন পক্ষ কোনো অংশীদারি ব্যবসায়ের অংশীদার হতে পারে না?",
+    answer: "",
+    options: ["প্রতিষ্ঠান ", "পাগল", "দেউলিয়া", "সগুলোই"],
+  },
+  {
+    numb: 13,/*1st chapter */
+    question: "মাছ চাষ কোন ধরনের শিল্প ?",
+    answer: "প্রজনন শিল্প",
+    options: [
+      "উৎপাদন শিল্প", "সংযোগ শিল্প", "প্রজনন শিল্প", "উত্তোলন শিল্প",
+    ],
+  },
+  {
+    numb: 14,  /*2nd chapter */
+    question:
+      "কোন ক্ষেত্রে একমালিকানা ব্যবসায় উপযোগী?",
+    answer: "উল্লিখিত সকল ক্ষেত্রে",
+    options: [
+      "ক্ষুদ্রায়তনের সংগঠন", "কম ঝুঁকির ব্যবসায়", "স্বল্প পুঁজির ব্যবসায়", "উল্লিখিত সকল ক্ষেত্রে",
+    ],
+  },
+  {
+    numb: 15,  /*3rd chapter */
+    question: "অংশীদারি ব্যবসায়ের লিখিত চুক্তিকে বলা হয়",
+    answer: "Deed",
+    options: ["Contract", "Devalue", "Deed", "Demat"],
+  },
+  {
+    numb: 16,/*1st chapter */
+    question:
+      "ব্যবসায়ের উৎপাদনকারী শাখা কোনটি?",
+    answer: "শিল্প",
+    options: ["সেবা পরিবেশক", "শিল্প", "বাণিজ্য", "সবগুলোই"],
+  },
+  {
+    numb: 17,  /*2nd chapter */
+    question: "সমাজে একমালিকানা ব্যবসায়ের মর্যাদা খুব কম কেন?",
+    answer: "",
+    options: ["আইনগত সত্তার অভাব", "একক মালিক", "প্রত্যক্ষ নিয়ন্ত্রণ", "পরিচালনা কেন্দ্রীভূত"],
+  },
+  {
+    numb: 18,  /*3rd chapter */
+    question:
+      "ঢাকা বিশ্ববিদ্যালয়ে ব্যবসায় শিক্ষা বিভাগের ছাত্র-ছাত্রীদের প্রধান উদ্দেশ্য হলো",
+    answer: "",
+    options: ["ব্যবসায় সংক্রান্তজ্ঞান অর্জন", "ভবিষ্যতে ভালো ব্যবস্থাপক হওয়া", "ভবিষ্যতে ভালো মালিক হওয়া", "একটি পেশাসৃষ্টি করা"],
+  },
+  {
+    numb: 19,/*1st chapter */
+    question:
+      "নিম্নের কোনটি ব্যবসায়ের অদৃশ্যমান উপাদান?",
+    answer: "সেবা",
+    options: ["নগদ অর্থ", "ভূমি", "সেবা", "পণ্য"],
+  },
+  {
+    numb: 20,  /*2nd chapter */
+    question:
+      "নিম্নের কোন সংঠনকে সকল সংগঠনের রাজা বলা হয়—",
+    answer: "",
+    options: ["একমালিকানা ব্যবসায়কে", "কারবারি জোটকে", "অংশীদারি ব্যবসায়কে", "রাষ্ট্রীয় ব্যবসায়কে"],
+  },
+  {
+    numb: 21,  /*3rd chapter */
+    question:
+      "অংশীদারি ব্যবসায়ের অন্যতম অসুবিধা হলো:",
+    answer: "একজন অন্যজনের জন্যও দায়ী",
+    options: ["দুই বার কর দিতে হয়", "একজন অন্যজনের জন্যও দায়ী", "করের হার সর্বাধিক","A ও B উভয়ই"],
+  },
+  {
+    numb: 22,/*1st chapter */
+    question: "নিম্নের কোনটি শিল্পের মধ্যে পড়ে না?",
+    answer: "পণ্য মজুদ",
+    options: ["নির্মাণ", "কৃষি", "প্রজনন", "পণ্য মজুদ"],
+  },
+  {
+    numb: 23,  /*2nd chapter */
+    question: "একমালিকানা সংগঠনের মালিকের দায়",
+    answer: "অসীম",
+    options: [
+      "আঙ্কিক মূল্য দ্বারা সসীম", "প্রতিশ্রুতি দ্বারা সসীম", "অসীম", "উপরের সবগুলোই হতে পারে।",
+    ],
+  },
+  {
+    numb: 24,  /*3rd chapter */
+    question:
+      "বাংলাদেশে প্রচলিত সীমিত অংশীদারি আইন কত সালের?",
+    answer: "১৯৩২",
+    options: [
+      "১৯০৭", "১৮৭২", "১৯৩২", "১৯৩৮",
+    ],
+  },
+  {
+    numb: 25,/*1st chapter */
+    question: "ব্যবসায়ের কমপক্ষে কোন দুটি পক্ষ থাকবে?",
+    answer: "ক্রেতা ও বিক্রেতা ",
+    options: ["ব্যাংক ও ক্রেতা", "ক্রেতা ও বিক্রেতা ", "ব্যাংক ও বিমা ", "মালিক ও কর্মী"],
+  },
+  {
+    numb: 26,  /*2nd chapter */
+    question:
+      "একমালিকানা সংগঠনের বৈশিষ্ট্য হলো",
+    answer: "",
+    options: [
+      "পরিবর্তনশীলতা",
+      "ছোট আয়তন",
+      "একক ব্যবস্থাপনা ও নিয়ন্ত্রণ",
+      "সবগুলোই",
+    ],
+  },
+  {
+    numb: 27,  /*3rd chapter */
+    question: "ব্যাংকিং অংশীদারি ব্যবসায়ের নিবন্ধন",
+    answer: "ঐচ্ছিক",
+    options: ["শর্ত সাপেক্ষ", "ঐচ্ছিক", "অনির্ধারিত", "বাধ্যতামূলক"],
+  },
+  {
+    numb: 28,/*1st chapter */
+    question:
+      "শ্রমের সঠিক ব্যবহার",
+    answer: "অর্থনৈতিক পরিবেশের অন্তর্গত",
+    options: ["সামাজিক পরিবেশের অন্তর্গত", "রাজনৈতিক পরিবেশের অন্তর্গত", "ব্যক্তিক পরিবেশের অন্তর্গত", "অর্থনৈতিক পরিবেশের অন্তর্গত"],
+  },
+  {
+    numb: 29,  /*2nd chapter */
+    question:
+      "বাংলাদেশেএকমালিকানা ব্যবসায় পরিচালনার জন্য কত সালের আইন মানতে হয়?",
+    answer: "",
+    options: ["১৯৯৪ সালের", "২০০১ সালের", "২০১০ সালের", "কোনো আইন নেই"],
+  },
+  {
+    numb: 30,  /*3rd chapter */
+    question:
+      "অংশীদারি ব্যবসায় নিবন্ধন না করার পরিণাম উল্লেখ করা আছে কত ধারায়?",
+    answer: "৬৯ ধারায়",
+    options: ["৬৯ ধারায়", "৩৯ ধারায়", "৩০ ধারায়", "৫৮ ধারায়"],
+  },
+  // you can uncomment the below codes and make duplicate as more as you want to add question
+  // but remember you need to give the numb value serialize like 1,2,3,5,6,7,8,9.....
+
+  //   {
+  //   numb: 6,
+  //   question: "Your Question is Here",
+  //   answer: "Correct answer of the question is here",
+  //   options: [
+  //     "Option 1",
+  //     "option 2",
+  //     "option 3",
+  //     "option 4"
+  //   ]
+  // },
+];
+
+    </script>
+
+    <!-- Inside this JavaScript file I've coded all Quiz Codes -->
+    <!-- <script src="js/script.js"></script> -->
+    <script>
+        //selecting all required elements
+const start_btn = document.querySelector(".start_btn button");
+const info_box = document.querySelector(".info_box");
+const exit_btn = info_box.querySelector(".buttons .quit");
+const continue_btn = info_box.querySelector(".buttons .restart");
+const quiz_box = document.querySelector(".quiz_box");
+const result_box = document.querySelector(".result_box");
+const option_list = document.querySelector(".option_list");
+const time_line = document.querySelector("header .time_line");
+const timeText = document.querySelector(".timer .time_left_txt");
+const timeCount = document.querySelector(".timer .timer_sec");
+
+// if startQuiz button clicked
+start_btn.onclick = ()=>{
+    info_box.classList.add("activeInfo"); //show info box
+}
+
+// if exitQuiz button clicked
+exit_btn.onclick = ()=>{
+    info_box.classList.remove("activeInfo"); //hide info box
+}
+
+// if continueQuiz button clicked
+continue_btn.onclick = ()=>{
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.add("activeQuiz"); //show quiz box
+    showQuetions(0); //calling showQestions function
+    queCounter(1); //passing 1 parameter to queCounter
+    startTimer(59); //calling startTimer function
+    startTimerLine(0); //calling startTimerLine function
+}
+
+let timeValue =  59;
+let que_count = 0;
+let que_numb = 1;
+let userScore = 0;
+let counter;
+let counterLine;
+let widthValue = 0;
+
+const restart_quiz = result_box.querySelector(".buttons .restart");
+const quit_quiz = result_box.querySelector(".buttons .quit");
+
+// if restartQuiz button clicked
+restart_quiz.onclick = ()=>{
+    quiz_box.classList.add("activeQuiz"); //show quiz box
+    result_box.classList.remove("activeResult"); //hide result box
+    timeValue = 59; 
+    que_count = 0;
+    que_numb = 1;
+    userScore = 0;
+    widthValue = 0;
+    showQuetions(que_count); //calling showQestions function
+    queCounter(que_numb); //passing que_numb value to queCounter
+    clearInterval(counter); //clear counter
+    clearInterval(counterLine); //clear counterLine
+    startTimer(timeValue); //calling startTimer function
+    startTimerLine(widthValue); //calling startTimerLine function
+    timeText.textContent = "Time Left"; //change the text of timeText to Time Left
+    next_btn.classList.remove("show"); //hide the next button
+}
+
+// if quitQuiz button clicked
+quit_quiz.onclick = ()=>{
+    window.location.reload(); //reload the current window
+}
+
+const next_btn = document.querySelector("footer .next_btn");
+const bottom_ques_counter = document.querySelector("footer .total_que");
+
+// if Next Que button clicked
+next_btn.onclick = ()=>{
+    if(que_count < questions.length - 1){ //if question count is less than total question length
+        que_count++; //increment the que_count value
+        que_numb++; //increment the que_numb value
+        showQuetions(que_count); //calling showQestions function
+        queCounter(que_numb); //passing que_numb value to queCounter
+        clearInterval(counter); //clear counter
+        clearInterval(counterLine); //clear counterLine
+        startTimer(timeValue); //calling startTimer function
+        startTimerLine(widthValue); //calling startTimerLine function
+        timeText.textContent = "Time Left"; //change the timeText to Time Left
+        next_btn.classList.remove("show"); //hide the next button
+    }else{
+        clearInterval(counter); //clear counter
+        clearInterval(counterLine); //clear counterLine
+        showResult(); //calling showResult function
+    }
+}
+
+// getting questions and options from array
+function showQuetions(index){
+    const que_text = document.querySelector(".que_text");
+
+    //creating a new span and div tag for question and option and passing the value using array index
+    let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
+    let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
+    + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
+    + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
+    + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>';
+    que_text.innerHTML = que_tag; //adding new span tag inside que_tag
+    option_list.innerHTML = option_tag; //adding new div tag inside option_tag
+    
+    const option = option_list.querySelectorAll(".option");
+
+    // set onclick attribute to all available options
+    for(i=0; i < option.length; i++){
+        option[i].setAttribute("onclick", "optionSelected(this)");
+    }
+}
+// creating the new div tags which for icons
+let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
+let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
+
+//if user clicked on option
+function optionSelected(answer){
+    clearInterval(counter); //clear counter
+    clearInterval(counterLine); //clear counterLine
+    let userAns = answer.textContent; //getting user selected option
+    let correcAns = questions[que_count].answer; //getting correct answer from array
+    const allOptions = option_list.children.length; //getting all option items
+    
+    if(userAns == correcAns){ //if user selected option is equal to array's correct answer
+        userScore += 1; //upgrading score value with 1
+        answer.classList.add("correct"); //adding green color to correct selected option
+        answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
+        console.log("Correct Answer");
+        console.log("Your correct answers = " + userScore);
+    }else{
+        answer.classList.add("incorrect"); //adding red color to correct selected option
+        answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
+        console.log("Wrong Answer");
+
+        for(i=0; i < allOptions; i++){
+            if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer 
+                option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
+                option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
+                console.log("Auto selected correct answer.");
+            }
+        }
+    }
+    for(i=0; i < allOptions; i++){
+        option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
+    }
+    next_btn.classList.add("show"); //show the next button if user selected any option
+}
+
+function showResult(){
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.remove("activeQuiz"); //hide quiz box
+    result_box.classList.add("activeResult"); //show result box
+    const scoreText = result_box.querySelector(".score_text");
+    if (userScore > 3){ // if user scored more than 3
+        //creating a new span tag and passing the user score number and total question number
+        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
+    }
+    else if(userScore > 1){ // if user scored more than 1
+        let scoreTag = '<span>and nice 😎, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
+    else{ // if user scored less than 1
+        let scoreTag = '<span>and sorry 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
+}
+
+function startTimer(time){
+    counter = setInterval(timer, 1000);
+    function timer(){
+        timeCount.textContent = time; //changing the value of timeCount with time value
+        time--; //decrement the time value
+        if(time < 9){ //if timer is less than 9
+            let addZero = timeCount.textContent; 
+            timeCount.textContent = "0" + addZero; //add a 0 before time value
+        }
+        if(time < 0){ //if timer is less than 0
+            clearInterval(counter); //clear counter
+            timeText.textContent = "Time Off"; //change the time text to time off
+            const allOptions = option_list.children.length; //getting all option items
+            let correcAns = questions[que_count].answer; //getting correct answer from array
+            for(i=0; i < allOptions; i++){
+                if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer
+                    option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
+                    option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
+                    console.log("Time Off: Auto selected correct answer.");
+                }
+            }
+            for(i=0; i < allOptions; i++){
+                option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
+            }
+            next_btn.classList.add("show"); //show the next button if user selected any option
+        }
+    }
+}
+
+function startTimerLine(time){
+    counterLine = setInterval(timer, 29);
+    function timer(){
+        time += 1; //upgrading time value with 1
+        time_line.style.width = time + "px"; //increasing width of time_line with px by time value
+        if(time > 0){ //if time value is greater than 549
+            clearInterval(counterLine); //clear counterLine
+        }
+    }
+}
+
+function queCounter(index){
+    //creating a new span tag and passing the question number and total question
+    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
+    bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
+}
+    </script>
+
+</body>
+</html>
